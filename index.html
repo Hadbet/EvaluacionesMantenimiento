@@ -11,303 +11,309 @@ session_destroy();
 }?>
 
 <head>
-	<title>Grammovil App</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<link rel="shortcut icon" href="lib/assets/img/iconoarriba.png" />
-	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-	<noscript>
-		<link rel="stylesheet" href="assets/css/noscript.css" />
-	</noscript>
-	<style>
-		.container {
-			position: relative;
-		}
+    <title>Grammovil App</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+    <link rel="shortcut icon" href="lib/assets/img/iconoarriba.png"/>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css"/>
+    </noscript>
+    <style>
+        .container {
+            position: relative;
+        }
 
-		.container .image-container {
-			display: flex;
-			flex-wrap: wrap;
-			gap: 15px;
-			justify-content: center;
-			padding: 10px;
-		}
+        .container .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            padding: 10px;
+        }
 
-		.container .image-container .image {
-			height: 250px;
-			width: 350px;
-			border: 10px solid #fff;
-			box-shadow: 0 5px rgba(0, 0, 0, .1);
-			overflow: hidden;
-			cursor: pointer;
-		}
+        .container .image-container .image {
+            height: 250px;
+            width: 350px;
+            border: 10px solid #fff;
+            box-shadow: 0 5px rgba(0, 0, 0, .1);
+            overflow: hidden;
+            cursor: pointer;
+        }
 
-		.container .image-container .image img {
-			height: 100%;
-			width: 100%;
-			object-fit: cover;
-			transition: .2s linear;
-		}
+        .container .image-container .image img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            transition: .2s linear;
+        }
 
-		.container .image-container .image:hover img {
-			transform: scale(1, 1);
-		}
+        .container .image-container .image:hover img {
+            transform: scale(1, 1);
+        }
 
-		.container .popup-image {
-			position: fixed;
-			top: 0;
-			left: 0;
-			background: rgba(0, 0, 0, .9);
-			height: 100%;
-			width: 100%;
-			z-index: 100;
-			display: none;
-		}
+        .container .popup-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, .9);
+            height: 100%;
+            width: 100%;
+            z-index: 100;
+            display: none;
+        }
 
-		.container .popup-image span {
-			position: absolute;
-			top: 0;
-			right: 10px;
-			font-size: 60px;
-			font-weight: bolder;
-			color: #fff;
-			cursor: pointer;
-			z-index: 100;
-		}
+        .container .popup-image span {
+            position: absolute;
+            top: 0;
+            right: 10px;
+            font-size: 60px;
+            font-weight: bolder;
+            color: #fff;
+            cursor: pointer;
+            z-index: 100;
+        }
 
-		.container .popup-image img {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			border: 5px solid #fff;
-			border-radius: 5px;
-			width: 750px;
-			object-fit: cover;
-		}
+        .container .popup-image img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 5px solid #fff;
+            border-radius: 5px;
+            width: 750px;
+            object-fit: cover;
+        }
 
-		@media (max-width:768px) {
-			.container .popup-image img {
-				width: 95%;
-			}
-		}
+        @media (max-width: 768px) {
+            .container .popup-image img {
+                width: 95%;
+            }
+        }
 
-		.modal-container {
-			display: flex;
-			background-color: rgba(0, 0, 0, 0.3);
-			align-items: center;
-			justify-content: center;
-			position: fixed;
-			pointer-events: none;
-			opacity: 0;
-			top: 0;
-			left: 0;
-			height: 100vh;
-			width: 100vw;
-			transition: opacity 0.3s ease;
-		}
+        .modal-container {
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.3);
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            pointer-events: none;
+            opacity: 0;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            transition: opacity 0.3s ease;
+        }
 
-		.show {
-			pointer-events: auto;
-			opacity: 1;
-		}
+        .show {
+            pointer-events: auto;
+            opacity: 1;
+        }
 
-		.modal {
-			background-color: #fff;
-			width: 600px;
-			max-width: 100%;
-			padding: 30px 50px;
-			border-radius: 5px;
-			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-			text-align: center;
-		}
+        .modal {
+            background-color: #fff;
+            width: 600px;
+            max-width: 100%;
+            padding: 30px 50px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
 
-		.modal h1 {
-			margin: 0;
-		}
+        .modal h1 {
+            margin: 0;
+        }
 
-		.modal p {
-			opacity: 0.7;
-			font-size: 14px;
-		}
+        .modal p {
+            opacity: 0.7;
+            font-size: 14px;
+        }
 
-		#close {
-			background-color: #47a386;
-			border: 0;
-			border-radius: 5px;
-			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-			color: #fff;
-			font-size: 14px;
-		}
+        #close {
+            background-color: #47a386;
+            border: 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            color: #fff;
+            font-size: 14px;
+        }
 
-		.danger {
-			background-color: #e6dfff;
-			border-left: 6px solid #4259a5;
-		}
-	</style>
+        .danger {
+            background-color: #e6dfff;
+            border-left: 6px solid #4259a5;
+        }
+    </style>
 </head>
-
-
 
 
 <body class="is-preload">
 <div style='color:black !important;' id="modal_container" class="modal-container">
-	<div class="modal">
-		<h1 style='color:dimgray !important; font-size: 27px;'>Lo marcado en rojo es el número de tag se encuentra
-			en la parte trasera de tu credencial.</h1>
-		<p>
-			<img style='width: 70%; margin-top:3%;' src="images/tag.png" alt="" />
-		</p>
-		<button id="close">Cerrar</button>
-	</div>
+    <div class="modal">
+        <h1 style='color:dimgray !important; font-size: 27px;'>Lo marcado en rojo es el número de tag se encuentra
+            en la parte trasera de tu credencial.</h1>
+        <p>
+            <img style='width: 70%; margin-top:3%;' src="images/tag.png" alt=""/>
+        </p>
+        <button id="close">Cerrar</button>
+    </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <!-- Wrapper -->
 <script>
-	$(document).ready(function () {
-		$('.zoom').hover(function () {
-			$(this).addClass('transition');
-		}, function () {
-			$(this).removeClass('transition');
-		});
-	});
+    $(document).ready(function () {
+        $('.zoom').hover(function () {
+            $(this).addClass('transition');
+        }, function () {
+            $(this).removeClass('transition');
+        });
+    });
 </script>
 <div id="wrapper">
 
-	<!-- Header -->
-	<header id="header" class="alt">
-		<span class="logo"><img height="100px" src="images/grammer.png" alt="" /></span>
-		<h1>¡Grammovil App!</h1>
-		<p>Bienvenido a tu portal de consulta.</p>
-	</header>
+    <!-- Header -->
+    <header id="header" class="alt">
+        <span class="logo"><img height="100px" src="images/grammer.png" alt=""/></span>
+        <h1>¡Grammovil App!</h1>
+        <p>Bienvenido a tu portal de consulta.</p>
+    </header>
 
-	<!-- Main -->
-	<div id="main">
+    <!-- Main -->
+    <div id="main">
 
-		<!-- Second Section -->
-		<section id="second" class="main special">
-			<header class="major">
-				<button id="open" style='margin-top:15px; background-color: lightcoral;'
-						class="primary">Regresar a la Grammovil</button>
-				<br><br>
-				<h2>EVALUACIÓN MANTENIMIENTO AUTÓNOMO (TEÓRICO Y PRÁCTICO)</h2>
-				<h3 id="nombre">Hadbet Ayari Altamirano Martinez</h3>
-				<br>
-				<ul class="alt">
-					<li>
-						<div class="col-6 col-12-xsmall">
-							<h3>¿Qué significa TPM?.</h3>
-							<input type="text" name="demo-name" id="txtPregunta" value=""
-								   placeholder="Numero de tag" />
-							<br>
-							<h3>¿Qué es el mantenimiento autónomo?.</h3>
-							<input type="text" name="demo-name" id="numerotag" value=""
-								   placeholder="Numero de tag" />
-							<br>
+        <!-- Second Section -->
+        <section id="second" class="main special">
+            <header class="major">
+                <button id="open" style='margin-top:15px; background-color: lightcoral;'
+                        class="primary">Regresar a la Grammovil
+                </button>
+                <br><br>
+                <h2>EVALUACIÓN MANTENIMIENTO AUTÓNOMO (TEÓRICO Y PRÁCTICO)</h2>
+                <h3 id="nombre">Hadbet Ayari Altamirano Martinez</h3>
+                <br>
+                <ul class="alt">
+                    <li>
+                        <div class="col-6 col-12-xsmall">
+                            <h3>¿Qué significa TPM?.</h3>
+                            <input type="text" name="demo-name" id="txtPregunta" value=""
+                            />
+                            <br>
+                            <h3>¿Qué es el mantenimiento autónomo?.</h3>
+                            <input type="text" name="demo-name" id="numerotag" value=""
+                            />
+                            <br>
 
-							<h3>¿Quién es responsible de seguir el plan de mantenimiento autónomo?.</h3>
-							<input type="text" name="demo-name" id="numerotag" value=""
-								   placeholder="Numero de tag" />
-							<br>
+                            <h3>¿Quién es responsible de seguir el plan de mantenimiento autónomo?.</h3>
+                            <input type="text" name="demo-name" id="numerotag" value=""
+                            />
+                            <br>
 
-							<h3>¿Cuáles son las tareas básicas para conservar en buenas condiciones de mi equipo?.</h3>
-							<input type="text" name="demo-name" id="numerotag" value=""
-								   placeholder="Numero de tag" />
-							<br>
+                            <h3>¿Cuáles son las tareas básicas para conservar en buenas condiciones de mi equipo?.</h3>
+                            <input type="text" name="demo-name" id="numerotag" value=""
+                            />
+                            <br>
 
-							<h3>Nombra tres beneficios al seguir de manera correcta el mantenimiento autónomo?.</h3>
-							<input type="text" name="demo-name" id="numerotag" value=""
-								   placeholder="Numero de tag" />
-							<br>
+                            <h3>Nombra tres beneficios al seguir de manera correcta el mantenimiento autónomo?.</h3>
+                            <input type="text" name="demo-name" id="numerotag" value=""
+                            />
+                            <br>
 
-							<h3>¿Cuándo se necesita elaborar una orden de trabajo?.</h3>
-							<input type="text" name="demo-name" id="numerotag" value=""
-								   placeholder="Numero de tag" />
-							<br>
+                            <h3>¿Cuándo se necesita elaborar una orden de trabajo?.</h3>
+                            <input type="text" name="demo-name" id="numerotag" value=""
+                            />
+                            <br>
 
-							<div class="col-4 col-12-small">
-								<h3>¿Conoce e identifica la estructura de los documentos que deberá utilizar para desempeñar sus tareas de Mantenimiento Autónomo?.</h3>
-								<input type="radio" id="testUnoO" name="testUno">
-								<label for="testUnoO">OK</label>
-								<input type="radio" id="testUnoN" name="testUno">
-								<label for="testUnoN">NO OK</label>
-							</div>
-							<br>
+                            <div class="col-4 col-12-small">
+                                <h3>¿Conoce e identifica la estructura de los documentos que deberá utilizar para
+                                    desempeñar sus tareas de Mantenimiento Autónomo?.</h3>
+                                <input type="radio" id="testUnoO" name="testUno">
+                                <label for="testUnoO">OK</label>
+                                <input type="radio" id="testUnoN" name="testUno">
+                                <label for="testUnoN">NO OK</label>
+                            </div>
+                            <br>
 
-							<div class="col-4 col-12-small">
-								<h3>¿Identifica los componentes frágiles o de mayor atención y cuidado?.</h3>
-								<input type="radio" id="testDosO" name="testDos">
-								<label for="testDosO">OK</label>
-								<input type="radio" id="testDosN" name="testDos">
-								<label for="testDosN">NO OK</label>
-							</div>
-							<br>
+                            <div class="col-4 col-12-small">
+                                <h3>¿Identifica los componentes frágiles o de mayor atención y cuidado?.</h3>
+                                <input type="radio" id="testDosO" name="testDos">
+                                <label for="testDosO">OK</label>
+                                <input type="radio" id="testDosN" name="testDos">
+                                <label for="testDosN">NO OK</label>
+                            </div>
+                            <br>
 
-							<div class="col-4 col-12-small">
-								<h3>¿Conoce  el EPP que requiere para desarrollar sus actividades de MA y la manera de reportar en caso de identificar una condición insegura?.</h3>
-								<input type="radio" id="testTresO" name="testTres">
-								<label for="testTresO">OK</label>
-								<input type="radio" id="testTresN" name="testTres">
-								<label for="testTresN">NO OK</label>
-							</div>
-							<br>
+                            <div class="col-4 col-12-small">
+                                <h3>¿Conoce el EPP que requiere para desarrollar sus actividades de MA y la manera de
+                                    reportar en caso de identificar una condición insegura?.</h3>
+                                <input type="radio" id="testTresO" name="testTres">
+                                <label for="testTresO">OK</label>
+                                <input type="radio" id="testTresN" name="testTres">
+                                <label for="testTresN">NO OK</label>
+                            </div>
+                            <br>
 
-							<div class="col-4 col-12-small">
-								<h3>Al ejecutar las actividades descritas en las instruccines de trabajo de Mantenimiento Autónomo, no presenta dificultades e interpreta las instrucciones de manera correcta.</h3>
-								<input type="radio" id="testCuatroO" name="testCuatro">
-								<label for="testCuatroO">OK</label>
-								<input type="radio" id="testCuatroN" name="testCuatro">
-								<label for="testCuatroN">NO OK</label>
-							</div>
-							<br>
+                            <div class="col-4 col-12-small">
+                                <h3>Al ejecutar las actividades descritas en las instruccines de trabajo de
+                                    Mantenimiento Autónomo, no presenta dificultades e interpreta las instrucciones de
+                                    manera correcta.</h3>
+                                <input type="radio" id="testCuatroO" name="testCuatro">
+                                <label for="testCuatroO">OK</label>
+                                <input type="radio" id="testCuatroN" name="testCuatro">
+                                <label for="testCuatroN">NO OK</label>
+                            </div>
+                            <br>
 
-							<div class="col-4 col-12-small">
-								<h3>¿En un supuesto  de avería realiza el registro de manera correcta siguiendo el flujo de proceso? <span style="color: #0f33ff">Falla>> Team leader/Shift leader>>Registro en Check list de MA>>Orden de Trabajo (Mantenimiento)</span></h3>
-								<input type="radio" id="testCincoO" name="testCinco">
-								<label for="testCincoO">OK</label>
-								<input type="radio" id="testCincoN" name="testCinco">
-								<label for="testCincoN">NO OK</label>
-							</div>
-							<br>
+                            <div class="col-4 col-12-small">
+                                <h3>¿En un supuesto de avería realiza el registro de manera correcta siguiendo el flujo
+                                    de proceso? <span style="color: #0f33ff">Falla>> Team leader/Shift leader>>Registro en Check list de MA>>Orden de Trabajo (Mantenimiento)</span>
+                                </h3>
+                                <input type="radio" id="testCincoO" name="testCinco">
+                                <label for="testCincoO">OK</label>
+                                <input type="radio" id="testCincoN" name="testCinco">
+                                <label for="testCincoN">NO OK</label>
+                            </div>
+                            <br>
 
-							<button style='margin-top:15px;' class="primary"
-									onclick="ordenTag();">Enviar</button>
+                            <button style='margin-top:15px;' class="primary"
+                                    onclick="ordenTag();">Enviar
+                            </button>
 
-						</div>
-					</li>
-				</ul>
-			</header>
-		</section>
-	</div>
+                        </div>
+                    </li>
+                </ul>
+            </header>
+        </section>
+    </div>
 
 
-	<!-- Footer -->
-	<footer id="footer">
-		<section>
-			<h2>Información</h2>
-			<dl class="alt">
-				<dt>Dirección</dt>
-				<dd>Av. de la luz #24 int.&bull; 3 y 4 &bull; Acceso III</dd>
-				<dd>Parque Ind. Benito Juárez &bull;76120 &bull;
-				<dd>Querétaro, Qro. México</dd>
-				<dt>RH </dt>
-				<dd> +52 (42) 36 44 60</dd>
-				<dt>Vigilancia </dt>
-				<dd> +52 (42) 38 44 00</dd>
-				<dt>Servicio Medico</dt>
-				<dd> +52 (42) 38 44 64</dd>
-			</dl>
-			<ul class="icons">
-				<li><a href="https://es-la.facebook.com/grammerqueretaro/"
-					   class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
-				<li><a href="https://www.instagram.com/grammerqro/" class="icon brands fa-instagram alt"><span
-						class="label">Instagram</span></a></li>
-				<li><a href="https://mx.linkedin.com/in/grammer-quer%C3%A9taro-b04b6611b"
-					   class="icon brands fa-linkedin alt"><span class="label">LinkeIn</span></a></li>
-			</ul>
-		</section>
-		<p class="copyright">&copy; Grammer Automotive Puebla S.A de C.V.: <a href="#">Grammer Queretaro</a>.</p>
-	</footer>
+    <!-- Footer -->
+    <footer id="footer">
+        <section>
+            <h2>Información</h2>
+            <dl class="alt">
+                <dt>Dirección</dt>
+                <dd>Av. de la luz #24 int.&bull; 3 y 4 &bull; Acceso III</dd>
+                <dd>Parque Ind. Benito Juárez &bull;76120 &bull;
+                <dd>Querétaro, Qro. México</dd>
+                <dt>RH</dt>
+                <dd> +52 (42) 36 44 60</dd>
+                <dt>Vigilancia</dt>
+                <dd> +52 (42) 38 44 00</dd>
+                <dt>Servicio Medico</dt>
+                <dd> +52 (42) 38 44 64</dd>
+            </dl>
+            <ul class="icons">
+                <li><a href="https://es-la.facebook.com/grammerqueretaro/"
+                       class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
+                <li><a href="https://www.instagram.com/grammerqro/" class="icon brands fa-instagram alt"><span
+                        class="label">Instagram</span></a></li>
+                <li><a href="https://mx.linkedin.com/in/grammer-quer%C3%A9taro-b04b6611b"
+                       class="icon brands fa-linkedin alt"><span class="label">LinkeIn</span></a></li>
+            </ul>
+        </section>
+        <p class="copyright">&copy; Grammer Automotive Puebla S.A de C.V.: <a href="#">Grammer Queretaro</a>.</p>
+    </footer>
 
 </div>
 
