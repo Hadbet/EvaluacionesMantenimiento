@@ -35,8 +35,8 @@ try {
         $respuestas = array($respuestaUno, $respuestaDos, $respuestaTres, $respuestaCuatro, $respuestaCinco, $respuestaSeis, $respuestaSiete, $respuestaOcho, $respuestaNueve, $respuestaDiez, $respuestaOnce);
 
         foreach ($respuestas as $index => $respuesta) {
-            $stmt = $conex->prepare("INSERT INTO `RespuestaEvaluacion`(`Respuesta`, `FolioRergistro`) VALUES (?,?,?)");
-            $stmt->bind_param("si", $respuesta, $idGenerado);
+            $stmt = $conex->prepare("INSERT INTO `RespuestaEvaluacion`(`IdPregunta`,`Respuesta`, `FolioRergistro`) VALUES (?,?,?)");
+            $stmt->bind_param("ssi", $index,$respuesta, $idGenerado);
             $stmt->execute();
         }
 
