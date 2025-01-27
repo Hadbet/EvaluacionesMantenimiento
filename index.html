@@ -113,10 +113,6 @@ session_destroy();
                             </div>
                             <br>
 
-                            <h3>Tienes comentarios adicionales.</h3>
-                            <input type="text" name="demo-name" id="txtComentario" value=""/>
-                            <br>
-
                             <div class="col-4 col-12-small">
                                 <h3>¿En un supuesto de avería realiza el registro de manera correcta siguiendo el flujo
                                     de proceso? <span style="color: #0f33ff">Falla>> Team leader/Shift leader>>Registro en Check list de MA>>Orden de Trabajo (Mantenimiento)</span>
@@ -128,8 +124,12 @@ session_destroy();
                             </div>
                             <br>
 
+                            <h3>Tienes comentarios adicionales.</h3>
+                            <input type="text" name="demo-name" id="txtComentario" value=""/>
+                            <br>
+
                             <button style='margin-top:15px;' class="primary"
-                                    onclick="enviarEvaluacion();">Enviar
+                                    onclick="validarCampos();">Enviar
                             </button>
 
                         </div>
