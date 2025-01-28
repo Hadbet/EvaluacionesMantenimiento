@@ -8,7 +8,7 @@
 <script src="assets/vendor/js/menu.js"></script>
 
 <!-- Main JS -->
-<script src="../assets/js/main.js"></script>
+<script src="assets/js/inicio.js"></script>
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
