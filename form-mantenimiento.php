@@ -138,7 +138,7 @@
                                                 <label class="form-check-label" for="defaultRadio2"> NO OK </label>
                                             </div>
                                         </div>
-                                        <button class="btn btn-primary">Send</button>
+                                        <button class="btn btn-primary" onclick="validarCampos()">Send</button>
                                 </div>
                             </div>
                         </div>
@@ -156,6 +156,7 @@
 <!-- / Layout wrapper -->
 
 <?php require_once('estaticos/librerias.php'); ?>
+<script src="lib/main.js"></script>
 
 </body>
 </html>
