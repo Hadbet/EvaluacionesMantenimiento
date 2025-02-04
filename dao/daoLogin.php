@@ -35,7 +35,7 @@ if(isset($_POST['btnIniciar'])){
             } else {
                 $_SESSION['Rol'] = 2;
             }
-            echo "<META HTTP-EQUIV='REFRESH' CONTENT='1; URL=index.php'>";
+            echo "<META HTTP-EQUIV='REFRESH' CONTENT='1; URL=.\index.php'>";
         } else {
             // Handle the case when userData is not valid
         }
