@@ -2,7 +2,7 @@
 include_once('db/db_Empleado.php');
 
 function verificacionUsuario($nomina,$tag){
-    $con = new LocalConector();
+    $con = new LocalConectorEmpleado();
     $conex=$con->conectar();
 
     $datos = mysqli_query($conex, "SELECT * FROM Empleados WHERE `IdUser`='$nomina' and `IdTag` = '$tag'");

@@ -1,5 +1,5 @@
 <?php
-class LocalConector{
+class LocalConectorEmpleado{
     private $host = "127.0.0.1:3306";
     private $usuario = "u909553968_Gramito";
     private $clave = "Grammer2024";
