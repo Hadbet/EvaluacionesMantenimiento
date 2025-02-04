@@ -31,12 +31,6 @@ $claseEstatica = 'active';
                 <div data-i18n="Analytics">Inicio</div>
             </a>
         </li>
-        <li class="menu-item">
-            <a href="index.html" class="menu-link">
-                <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Analytics">Mis evaluaciones</div>
-            </a>
-        </li>
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Mantenimiento</span>
         </li>
