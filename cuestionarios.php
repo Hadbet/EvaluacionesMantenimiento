@@ -27,30 +27,9 @@
             <div class="content-wrapper">
                 <!-- Content -->
                 <div class="container-xxl flex-grow-1 container-p-y">
+                    <div class="row" id="carts">
 
-                    <div class="row">
-                        <div class="col-md-6 col-xl-4">
-                            <div class="card bg-success text-white mb-3">
-                                <div class="card-header">Concluido</div>
-                                <div class="card-body">
-                                    <h5 class="card-title text-white">Custionario Mantenimiento Autonomo</h5>
-                                    <p class="card-text">Area Mantenimiento.</p>
-                                    <a href="javascript:void(0)" class="btn btn-primary">Ver evaluacion</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xl-4">
-                            <div class="card bg-danger text-white mb-3">
-                                <div class="card-header">Pendiente</div>
-                                <div class="card-body">
-                                    <h5 class="card-title text-white">Final Mantenimiento Autonomo</h5>
-                                    <p class="card-text">Area Mantenimiento.</p>
-                                    <a href="javascript:void(0)" class="btn btn-primary">Realizar</a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-
                 </div>
                 <!-- / Content -->
             </div>
@@ -65,6 +44,35 @@
 
 <?php require_once('estaticos/librerias.php'); ?>
 <script src="lib/main.js"></script>
+<script>
+    var cargaAux = '00001606';
+    $.getJSON('https://grammermx.com/Mantenimiento/Evaluaciones/dao/daoConsultaUser.php?usuario='+cargaAux, function (data) {
+        for (var i = 0; i < data.data.length; i++) {
+
+            var idCuestionario = data.data[i].IdCuestionario;
+            var nombre = data.data[i].Nombre;
+            var area = data.data[i].Area;
+            var comentario = data.data[i].Comentario;
+            var estiloCart,anuncioCart;
+
+            if (comentario === "No"){
+                estiloCart="bg-danger";
+                anuncioCart="Pendiente";
+            }else{
+                estiloCart="bg-success";
+                anuncioCart="Realizado";
+            }
+
+            $('#carts').append("<div class='col-md-6 col-xl-4'> " +
+                "<div class='card "+estiloCart+" text-white mb-3'> " +
+                "<div class='card-header'>"+anuncioCart+"</div> " +
+                "<div class='card-body'> " +
+                "<h5 class='card-title text-white'>"+nombre+"</h5> " +
+                "<p class='card-text'>"+area+"</p> " +
+                "<a href='javascript:void(0)' class='btn btn-primary'>Realizar</a></div></div></div>");
+        }
+    });
+</script>
 
 </body>
 </html>
