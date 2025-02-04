@@ -82,6 +82,7 @@
                                     <th>Nombre</th>
                                     <th>Fecha</th>
                                     <th>Pregunta</th>
+                                    <th>Pregunta</th>
                                 </tr>
                                 </thead>
                                 <tfoot>
@@ -90,6 +91,7 @@
                                     <th>Nomina</th>
                                     <th>Nombre</th>
                                     <th>Fecha</th>
+                                    <th>Pregunta</th>
                                     <th>Pregunta</th>
                                 </tr>
                                 </tfoot>
