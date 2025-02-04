@@ -183,6 +183,10 @@ $rol = $_SESSION['Rol']; ?>
 
     var cuestionario = getParameterByName("b80bb7740288fda1f201890375a60c8f");
 
+    if (cuestionario === ""){
+        window.history.back();
+    }
+
     function getParameterByName(name) {
         name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
         var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
