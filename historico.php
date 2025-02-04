@@ -74,9 +74,9 @@
                     <div class="card">
                         <h5 class="card-header">Final Mantenimiento Autonomo</h5>
                         <div class="table-responsive text-nowrap">
-                            <table class="table" id="dataTable-1">
+                            <table class="table datatables" id="dataTable-1">
                                 <thead>
-                                <tr class="text-nowrap">
+                                <tr>
                                     <th>#</th>
                                     <th>Nomina</th>
                                     <th>Nombre</th>
@@ -84,18 +84,20 @@
                                     <th>Pregunta</th>
                                 </tr>
                                 </thead>
-                                <tbody>
-                                </tbody>
                                 <tfoot>
                                 <tr>
-                                    <th>Folio</th>
-                                    <th>Número de Parte</th>
-                                    <th>Primer Conteo</th>
-                                    <th>Segundo Conteo</th>
-                                    <th>Segundo Conteo</th>
+                                    <th>#</th>
+                                    <th>Nomina</th>
+                                    <th>Nombre</th>
+                                    <th>Fecha</th>
+                                    <th>Pregunta</th>
                                 </tr>
                                 </tfoot>
+                                <tbody>
+
+                                </tbody>
                             </table>
+
                         </div>
                     </div>
                     <!--/ Responsive Table -->
