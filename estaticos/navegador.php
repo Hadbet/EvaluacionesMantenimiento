@@ -41,7 +41,7 @@ $claseEstatica = 'active';
             </a>
             <ul class="menu-sub">
                 <li class="menu-item <?php if (str_contains($archivo_actual, 'usuario')) {echo $claseEstatica;}?>">
-                    <a href="usuarios.php" class="menu-link">
+                    <a href="usuario.php" class="menu-link">
                         <div data-i18n="Account">Usuarios</div>
                     </a>
                 </li>
