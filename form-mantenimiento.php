@@ -138,6 +138,12 @@
                                                 <label class="form-check-label" for="defaultRadio2"> NO OK </label>
                                             </div>
                                         </div>
+
+                                        <div class="mb-3">
+                                            <label class="form-label" for="basic-default-fullname">Comentarios</label>
+                                            <input type="text" class="form-control" id="txtComentario"/>
+                                        </div>
+
                                         <button class="btn btn-primary" onclick="validarCampos()">Send</button>
                                 </div>
                             </div>
@@ -174,7 +180,6 @@
     var cargaAux = '00001606';
     $.getJSON('https://grammermx.com/Mantenimiento/Evaluaciones/dao/daoConsultaCuestionario.php?usuario='+cargaAux+'&idCuestionario='+cuestionario, function (data) {
         if (data.data.length !== 0) {
-            alert(data.data.length);
             window.history.back();
         } else {
             for (var i = 0; i < data.data.length; i++) {
