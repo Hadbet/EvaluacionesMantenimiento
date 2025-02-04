@@ -1,5 +1,5 @@
 <?php
-include_once('db.php');
+include_once('db/db_Empleado.php');
 
 function verificacionUsuario($nomina,$tag){
     $con = new LocalConector();
