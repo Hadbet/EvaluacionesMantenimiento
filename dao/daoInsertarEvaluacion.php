@@ -4,6 +4,7 @@ include_once('db/db_Mantenimiento.php');
 $nombre = $_POST['nombre'];
 $nomina = $_POST['nomina'];
 $comentarios = $_POST['comentarios'];
+$cuestionario = $_POST['cuestionario'];
 
 $respuestaUno = $_POST['respuestaUno'];
 $respuestaDos = $_POST['respuestaDos'];
@@ -25,8 +26,8 @@ try {
     $Object->setTimezone(new DateTimeZone('America/Denver'));
     $DateAndTime = $Object->format("Y/m/d h:i:s");
 
-    $stmt = $conex->prepare("INSERT INTO `RegistroEvaluacion`(`Nomina`, `Nombre`, `FechaRegistro`, `Comentarios`) VALUES (?,?,?,?)");
-    $stmt->bind_param("ssss", $nomina, $nombre, $DateAndTime, $comentarios);
+    $stmt = $conex->prepare("INSERT INTO `RegistroEvaluacion`(`Nomina`, `Nombre`, `FechaRegistro`, `Comentarios`,`IdCuestionario`) VALUES (?,?,?,?,?)");
+    $stmt->bind_param("ssssi", $nomina, $nombre, $DateAndTime, $comentarios,$cuestionario);
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
