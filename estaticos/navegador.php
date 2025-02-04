@@ -26,7 +26,7 @@ $claseEstatica = 'active';
     <ul class="menu-inner py-1">
         <!-- Dashboard -->
         <li class="menu-item <?php if (str_contains($archivo_actual, 'index')) {echo $claseEstaticaGlobal;}?>">
-            <a href="index.html" class="menu-link">
+            <a href="index.php" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Inicio</div>
             </a>
