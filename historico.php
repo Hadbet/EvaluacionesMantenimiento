@@ -119,7 +119,7 @@
 <script src="lib/main.js"></script>
 <script>
     $.ajax({
-        url: 'https://grammermx.com/Logistica/Inventario2024/dao/consultaLideres.php?idCuestionario=1', // Reemplaza esto con la URL de tus datos
+        url: 'https://grammermx.com/Mantenimiento/Evaluaciones/dao/daoConsultaCuestionarioUno.php?idCuestionario=1', // Reemplaza esto con la URL de tus datos
         dataType: 'json',
         success: function(data) {
             var table = $('#dataTable-1').DataTable({
