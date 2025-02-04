@@ -18,27 +18,28 @@ if(isset($_POST['btnIniciar'])){
     if (strlen($nomina) == 6) { $nomina = "00".$nomina; }
     if (strlen($nomina) == 7) { $nomina = "0".$nomina; }
 
-    $administrador = cliente($nomina);
+    try {
+        $administrador = cliente($nomina);
+        $userData = verificacionUsuario($nomina, $tag);
 
-    $userData = verificacionUsuario($nomina, $tag);
+        if ($userData) {
+            $_SESSION['IdUser'] = $userData['IdUser'];
+            $_SESSION['NomUser'] = $userData['NomUser'];
+            $_SESSION['Tag'] = $userData['IdTag'];
 
-    if ($userData) {
-
-        $_SESSION['IdUser'] = $userData['IdUser'];
-        $_SESSION['NomUser'] = $userData['NomUser'];
-        $_SESSION['Tag'] = $userData['IdTag'];
-
-        if ($administrador == 1){
-            $_SESSION['Rol'] = 1;
+            if ($administrador == 1){
+                $_SESSION['Rol'] = 1;
+            } else {
+                $_SESSION['Rol'] = 2;
+            }
+            echo "<META HTTP-EQUIV='REFRESH' CONTENT='1; URL=index.php'>";
         } else {
-            $_SESSION['Rol'] = 2;
+            // Handle the case when userData is not valid
         }
-        echo "<META HTTP-EQUIV='REFRESH' CONTENT='1; URL=index.php'>";
-
-    } else {
-
+    } catch (Exception $e) {
+        // Handle the exception
+        echo 'Caught exception: ',  $e->getMessage(), "\n";
     }
-
 }
 
 ?>
