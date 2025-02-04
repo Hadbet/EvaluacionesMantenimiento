@@ -174,6 +174,7 @@
     var cargaAux = '00001606';
     $.getJSON('https://grammermx.com/Mantenimiento/Evaluaciones/dao/daoConsultaCuestionario.php?usuario='+cargaAux+'&idCuestionario='+cuestionario, function (data) {
         if (data.data.length === 0) {
+            alert(data.data.length);
             window.history.back();
         } else {
             for (var i = 0; i < data.data.length; i++) {
