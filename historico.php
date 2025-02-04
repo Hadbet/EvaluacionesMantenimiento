@@ -29,52 +29,44 @@
                 <div class="container-xxl flex-grow-1 container-p-y">
                     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Mantenimiento /</span> Respuestas</h4>
 
-                    <!-- Basic Bootstrap Table -->
-
-                    <hr class="my-5" />
-
                     <!-- Responsive Table -->
-                    <div class="card">
-                        <h5 class="card-header">Cuestionario Mantenimiento Autonomo</h5>
+                    <div class="card" style="padding: 32px;">
+                        <h5 class="card-header">Final Mantenimiento Autonomo</h5>
                         <div class="table-responsive text-nowrap">
-                            <table class="table">
+                            <table class="table datatables" id="dataTable-1">
                                 <thead>
-                                <tr class="text-nowrap">
+                                <tr>
                                     <th>#</th>
                                     <th>Nomina</th>
                                     <th>Nombre</th>
-                                    <th>Pregunta 1</th>
-                                    <th>Pregunta 2</th>
-                                    <th>Pregunta 3</th>
-                                    <th>Pregunta 4</th>
-                                    <th>Pregunta 5</th>
-                                    <th>Pregunta 6</th>
-                                    <th>Pregunta 7</th>
+                                    <th>Fecha</th>
+                                    <th>Pregunta</th>
+                                    <th>Pregunta</th>
                                 </tr>
                                 </thead>
-                                <tbody>
+                                <tfoot>
                                 <tr>
-                                    <th scope="row">3</th>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
+                                    <th>#</th>
+                                    <th>Nomina</th>
+                                    <th>Nombre</th>
+                                    <th>Fecha</th>
+                                    <th>Pregunta</th>
+                                    <th>Pregunta</th>
                                 </tr>
+                                </tfoot>
+                                <tbody>
+
                                 </tbody>
                             </table>
+
                         </div>
                     </div>
 
                     <hr class="my-5" />
-                    <div class="card">
+                    <div class="card" style="padding: 32px;">
                         <h5 class="card-header">Final Mantenimiento Autonomo</h5>
                         <div class="table-responsive text-nowrap">
-                            <table class="table datatables" id="dataTable-1">
+                            <table class="table datatables" id="dataTable-2">
                                 <thead>
                                 <tr>
                                     <th>#</th>
@@ -129,7 +121,7 @@
                     { data: 'Nomina' },
                     { data: 'Nombre' },
                     { data: 'FechaRegistro' },
-                    { data: 'Pregunta ' },
+                    { data: 'Pregunta' },
                     { data: 'Respuesta' }
                 ],
                 autoWidth: true,
