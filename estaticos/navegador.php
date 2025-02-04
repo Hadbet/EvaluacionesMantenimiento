@@ -40,8 +40,8 @@ $claseEstatica = 'active';
                 <div data-i18n="Account Settings">Administracion</div>
             </a>
             <ul class="menu-sub">
-                <li class="menu-item">
-                    <a href="pages-account-settings-account.html" class="menu-link">
+                <li class="menu-item <?php if (str_contains($archivo_actual, 'usuario')) {echo $claseEstatica;}?>">
+                    <a href="usuarios.php" class="menu-link">
                         <div data-i18n="Account">Usuarios</div>
                     </a>
                 </li>

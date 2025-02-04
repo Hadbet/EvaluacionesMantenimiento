@@ -29,7 +29,7 @@
                 <div class="container-xxl flex-grow-1 container-p-y">
                     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Administrativos /</span> Usuarios</h4>
                     <!-- Responsive Table -->
-                    <div class="card">
+                    <div class="card" style="padding: 32px">
                         <h5 class="card-header">Usuarios</h5>
                         <div class="table-responsive text-nowrap">
                             <table class="table datatables" id="dataTable-2">
