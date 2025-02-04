@@ -31,7 +31,7 @@
 
                     <!-- Responsive Table -->
                     <div class="card" style="padding: 32px;">
-                        <h5 class="card-header">Final Mantenimiento Autonomo</h5>
+                        <h5 class="card-header">Inicio Mantenimiento Autonomo</h5>
                         <div class="table-responsive text-nowrap">
                             <table class="table datatables" id="dataTable-1">
                                 <thead>

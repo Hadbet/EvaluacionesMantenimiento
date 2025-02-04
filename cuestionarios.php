@@ -53,14 +53,16 @@
             var nombre = data.data[i].Nombre;
             var area = data.data[i].Area;
             var comentario = data.data[i].Comentario;
-            var estiloCart,anuncioCart;
+            var estiloCart,anuncioCart,botonCart;
 
             if (comentario === "No"){
                 estiloCart="bg-danger";
                 anuncioCart="Pendiente";
+                botonCart="<a href='https://grammermx.com/Mantenimiento/Evaluaciones/form-mantenimiento.php?b80bb7740288fda1f201890375a60c8f="+idCuestionario+"' class='btn btn-primary '>Realizar</a></div></div></div>";
             }else{
                 estiloCart="bg-success";
                 anuncioCart="Realizado";
+                botonCart = ""
             }
 
             $('#carts').append("<div class='col-md-6 col-xl-4'> " +
@@ -68,8 +70,7 @@
                 "<div class='card-header'>"+anuncioCart+"</div> " +
                 "<div class='card-body'> " +
                 "<h5 class='card-title text-white'>"+nombre+"</h5> " +
-                "<p class='card-text'>"+area+"</p> " +
-                "<a href='https://grammermx.com/Mantenimiento/Evaluaciones/form-mantenimiento.php?b80bb7740288fda1f201890375a60c8f="+idCuestionario+"' class='btn btn-primary'>Realizar</a></div></div></div>");
+                "<p class='card-text'>"+area+"</p> " + botonCart);
         }
     });
 </script>
