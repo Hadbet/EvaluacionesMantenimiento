@@ -11,6 +11,8 @@
     <?php require_once('estaticos/estilos.php'); ?>
 </head>
 
+
+
 <body>
 <!-- Layout wrapper -->
 <div class="layout-wrapper layout-content-navbar">
