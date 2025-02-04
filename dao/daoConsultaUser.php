@@ -1,5 +1,5 @@
 <?php
-include_once('db.php');
+include_once('db/db_Mantenimiento.php');
 
 $usuario=$_GET['usuario'];
 consultaUsuario($usuario);
