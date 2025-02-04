@@ -31,7 +31,7 @@ $rol =$_SESSION['Rol'];
             <!-- User -->
             <li class="nav-item navbar-dropdown dropdown-user dropdown">
                 <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                    <div class="avatar avatar-online">
+                    <div class="avatar ">
                         <img src="https://grammermx.com/Fotos/<?php echo $usuario;?>.png" alt class="w-px-40 h-auto rounded-circle" />
                     </div>
                 </a>
@@ -40,7 +40,7 @@ $rol =$_SESSION['Rol'];
                         <a class="dropdown-item" href="#">
                             <div class="d-flex">
                                 <div class="flex-shrink-0 me-3">
-                                    <div class="avatar avatar-online">
+                                    <div class="avatar ">
                                         <img src="https://grammermx.com/Fotos/<?php echo $usuario;?>.png" alt class="w-px-40 h-auto rounded-circle" />
                                     </div>
                                 </div>
