@@ -158,5 +158,30 @@
 <?php require_once('estaticos/librerias.php'); ?>
 <script src="lib/main.js"></script>
 
+<script>
+
+    var cuestionario = getParameterByName("b80bb7740288fda1f201890375a60c8f");
+
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        var cadena = results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+        var arrTerminos = cadena.split(',');
+        return arrTerminos[0];
+    }
+
+    var cargaAux = '00001606';
+    $.getJSON('https://grammermx.com/Mantenimiento/Evaluaciones/dao/daoConsultaCuestionario.php?usuario='+cargaAux+'&idCuestionario='+cuestionario, function (data) {
+        if (data.data.length === 0) {
+            window.history.back();
+        } else {
+            for (var i = 0; i < data.data.length; i++) {
+
+            }
+        }
+    });
+</script>
+
 </body>
 </html>

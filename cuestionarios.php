@@ -69,7 +69,7 @@
                 "<div class='card-body'> " +
                 "<h5 class='card-title text-white'>"+nombre+"</h5> " +
                 "<p class='card-text'>"+area+"</p> " +
-                "<a href='javascript:void(0)' class='btn btn-primary'>Realizar</a></div></div></div>");
+                "<a href='https://grammermx.com/Mantenimiento/Evaluaciones/form-mantenimiento.php?b80bb7740288fda1f201890375a60c8f="+idCuestionario+"' class='btn btn-primary'>Realizar</a></div></div></div>");
         }
     });
 </script>
