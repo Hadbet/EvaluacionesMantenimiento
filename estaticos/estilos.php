@@ -26,3 +26,4 @@
 <script src="assets/vendor/js/helpers.js"></script>
 <script src="assets/js/config.js"></script>
 <link rel="stylesheet" href="assets/css/dataTables.bootstrap4.css">
+<link rel="stylesheet" href="assets/css/jquery.dataTables.min.css">
