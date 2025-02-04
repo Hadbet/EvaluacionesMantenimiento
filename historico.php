@@ -1,3 +1,9 @@
+<?php session_start();
+$usuario =$_SESSION['IdUser'];
+$nombre =$_SESSION['NomUser'];
+$tag =$_SESSION['Tag'];
+$rol =$_SESSION['Rol'];?>
+
 <!DOCTYPE html>
 <html
         lang="en" class="light-style layout-menu-fixed" dir="ltr"

@@ -1,3 +1,8 @@
+<?php session_start();
+$usuario =$_SESSION['IdUser'];
+$nombre =$_SESSION['NomUser'];
+$tag =$_SESSION['Tag'];
+$rol =$_SESSION['Rol'];?>
 <!DOCTYPE html>
 <html
         lang="en" class="light-style layout-menu-fixed" dir="ltr"
@@ -177,7 +182,8 @@
         return arrTerminos[0];
     }
 
-    var cargaAux = '00001606';
+    var cargaAux = '<?php echo $usuario?>';
+    var nombreAux = '<?php echo $nombre?>';
     $.getJSON('https://grammermx.com/Mantenimiento/Evaluaciones/dao/daoConsultaCuestionario.php?usuario='+cargaAux+'&idCuestionario='+cuestionario, function (data) {
         if (data.data.length !== 0) {
             window.history.back();
