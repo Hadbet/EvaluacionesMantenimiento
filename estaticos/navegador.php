@@ -34,7 +34,7 @@ $claseEstatica = 'active';
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Mantenimiento</span>
         </li>
-        <li class="menu-item <?php if (str_contains($archivo_actual, 'historico')) {echo $claseEstaticaGlobal;}?>">
+        <li class="menu-item <?php if (str_contains($archivo_actual, 'historico') || str_contains($archivo_actual, 'usuario')) {echo $claseEstaticaGlobal;}?>">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Account Settings">Administracion</div>
