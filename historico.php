@@ -85,15 +85,16 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                    <td>Table cell</td>
-                                </tr>
                                 </tbody>
+                                <tfoot>
+                                <tr>
+                                    <th>Folio</th>
+                                    <th>Número de Parte</th>
+                                    <th>Primer Conteo</th>
+                                    <th>Segundo Conteo</th>
+                                    <th>Segundo Conteo</th>
+                                </tr>
+                                </tfoot>
                             </table>
                         </div>
                     </div>
