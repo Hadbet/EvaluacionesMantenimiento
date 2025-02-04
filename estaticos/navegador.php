@@ -6,6 +6,12 @@ $archivo_actual = basename($_SERVER['PHP_SELF']);
 $claseEstaticaGlobal = 'active open';
 $claseEstatica = 'active';
 
+session_start();
+$usuario =$_SESSION['IdUser'];
+$nombre =$_SESSION['NomUser'];
+$tag =$_SESSION['Tag'];
+$rol =$_SESSION['Rol'];
+
 ?>
 
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
@@ -34,24 +40,32 @@ $claseEstatica = 'active';
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Mantenimiento</span>
         </li>
-        <li class="menu-item <?php if (str_contains($archivo_actual, 'historico') || str_contains($archivo_actual, 'usuario')) {echo $claseEstaticaGlobal;}?>">
-            <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                <div data-i18n="Account Settings">Administracion</div>
-            </a>
-            <ul class="menu-sub">
-                <li class="menu-item <?php if (str_contains($archivo_actual, 'usuario')) {echo $claseEstatica;}?>">
-                    <a href="usuario.php" class="menu-link">
-                        <div data-i18n="Account">Usuarios</div>
-                    </a>
-                </li>
-                <li class="menu-item <?php if (str_contains($archivo_actual, 'historico')) {echo $claseEstatica;}?>">
-                    <a href="historico.php" class="menu-link">
-                        <div data-i18n="Notifications">Historicos</div>
-                    </a>
-                </li>
-            </ul>
-        </li>
+        <?php
+        if ($rol===1){?>
+            <li class="menu-item <?php if (str_contains($archivo_actual, 'historico') || str_contains($archivo_actual, 'usuario')) {echo $claseEstaticaGlobal;}?>">
+                <a href="javascript:void(0);" class="menu-link menu-toggle">
+                    <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                    <div data-i18n="Account Settings">Administracion</div>
+                </a>
+                <ul class="menu-sub">
+                    <li class="menu-item <?php if (str_contains($archivo_actual, 'usuario')) {echo $claseEstatica;}?>">
+                        <a href="usuario.php" class="menu-link">
+                            <div data-i18n="Account">Usuarios</div>
+                        </a>
+                    </li>
+                    <li class="menu-item <?php if (str_contains($archivo_actual, 'historico')) {echo $claseEstatica;}?>">
+                        <a href="historico.php" class="menu-link">
+                            <div data-i18n="Notifications">Historicos</div>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        <?php
+        }else{
+
+        }
+        ?>
+
         <li class="menu-item <?php if (str_contains($archivo_actual, 'form-mantenimiento')) {echo $claseEstaticaGlobal;}?>">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
