@@ -25,7 +25,7 @@ try {
     $Object->setTimezone(new DateTimeZone('America/Denver'));
     $DateAndTime = $Object->format("Y/m/d h:i:s");
 
-    $stmt = $conex->prepare("INSERT INTO `RegistroEvaluacion`(`Nomina`, `Nombre`, `FechaRegistro`, `Comentarios`) VALUES (?,?,?,?)");
+    $stmt = $conex->prepare("INSERT INTO `RegistroEvaluacion`(`Nomina`, `Nombre`, `FechaRegistro`, `Comentarios`, `Estatus`) VALUES (?,?,?,?,1)");
     $stmt->bind_param("ssss", $nomina, $nombre, $DateAndTime, $comentarios);
     $stmt->execute();
 

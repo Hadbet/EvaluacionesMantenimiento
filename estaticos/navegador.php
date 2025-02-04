@@ -1,5 +1,12 @@
 
-<?php $archivo_actual = basename($_SERVER['PHP_SELF']);?>
+<?php
+
+$archivo_actual = basename($_SERVER['PHP_SELF']);
+
+$claseEstaticaGlobal = 'active open';
+$claseEstatica = 'active';
+
+?>
 
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <img src="images/iconoarriba.png" class="mt-3" style="width: 35%;align-self: center;">
@@ -18,7 +25,7 @@
 
     <ul class="menu-inner py-1">
         <!-- Dashboard -->
-        <li class="menu-item">
+        <li class="menu-item <?php if (str_contains($archivo_actual, 'index')) {echo $claseEstaticaGlobal;}?>">
             <a href="index.html" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-home-circle"></i>
                 <div data-i18n="Analytics">Inicio</div>
@@ -33,7 +40,7 @@
         <li class="menu-header small text-uppercase">
             <span class="menu-header-text">Mantenimiento</span>
         </li>
-        <li class="menu-item">
+        <li class="menu-item <?php if (str_contains($archivo_actual, 'historico')) {echo $claseEstaticaGlobal;}?>">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
                 <div data-i18n="Account Settings">Administracion</div>
@@ -44,21 +51,21 @@
                         <div data-i18n="Account">Usuarios</div>
                     </a>
                 </li>
-                <li class="menu-item">
-                    <a href="pages-account-settings-notifications.html" class="menu-link">
+                <li class="menu-item <?php if (str_contains($archivo_actual, 'historico')) {echo $claseEstatica;}?>">
+                    <a href="historico.php" class="menu-link">
                         <div data-i18n="Notifications">Historicos</div>
                     </a>
                 </li>
             </ul>
         </li>
-        <li class="menu-item active open">
+        <li class="menu-item <?php if (str_contains($archivo_actual, 'form-mantenimiento')) {echo $claseEstaticaGlobal;}?>">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
                 <div data-i18n="Authentications">Cuestionarios</div>
             </a>
             <ul class="menu-sub">
-                <li class="menu-item active">
-                    <a href="auth-login-basic.html" class="menu-link" target="_blank">
+                <li class="menu-item <?php if (str_contains($archivo_actual, 'form-mantenimiento')) {echo $claseEstatica;}?>">
+                    <a href="form-mantenimiento.php" class="menu-link" target="_blank">
                         <div data-i18n="Basic">TPM</div>
                     </a>
                 </li>
@@ -69,7 +76,7 @@
         <li class="menu-header small text-uppercase"><span class="menu-header-text">Recursos Humanos</span></li>
         <!-- Cards -->
         <li class="menu-item">
-            <a href="cards-basic.html" class="menu-link">
+            <a href="" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
                 <div data-i18n="Basic">Proximamente</div>
             </a>
@@ -80,7 +87,7 @@
         <!-- Forms -->
 
         <li class="menu-item">
-            <a href="cards-basic.html" class="menu-link">
+            <a href="" class="menu-link">
                 <i class="menu-icon tf-icons bx bx-collection"></i>
                 <div data-i18n="Basic">Proximamente</div>
             </a>
