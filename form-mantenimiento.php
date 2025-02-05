@@ -200,7 +200,7 @@ $rol = $_SESSION['Rol']; ?>
     var nombreAux = '<?php echo $nombre?>';
     $.getJSON('https://grammermx.com/Mantenimiento/Evaluaciones/dao/daoConsultaCuestionario.php?usuario=' + cargaAux + '&idCuestionario=' + cuestionario, function (data) {
         if (data.data.length !== 0) {
-            window.history.back();
+            window.location.href = "https://grammermx.com/Mantenimiento/Evaluaciones/index.php";
         } else {
             for (var i = 0; i < data.data.length; i++) {
 
