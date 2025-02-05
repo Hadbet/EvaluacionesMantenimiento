@@ -184,7 +184,7 @@ $rol = $_SESSION['Rol']; ?>
     var cuestionario = getParameterByName("b80bb7740288fda1f201890375a60c8f");
 
     if (cuestionario === ""){
-        window.history.back();
+        window.location.href = "https://grammermx.com/Mantenimiento/Evaluaciones/index.php";
     }
 
     function getParameterByName(name) {
